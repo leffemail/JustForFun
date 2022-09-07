@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore /SuperFunHappySlide/SuperFunHappySlide.sln
+      run: dotnet restore SuperFunHappySlide/SuperFunHappySlide.sln
     - name: Build
-      run: dotnet build /SuperFunHappySlide/SuperFunHappySlide.sln
+      run: dotnet build SuperFunHappySlide/SuperFunHappySlide.sln
     - name: Test
       run: dotnet test --no-build --verbosity normal
