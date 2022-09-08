@@ -1,0 +1,14 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-workflow-passing-data:
+    uses: justforfun/.github/workflows/reusableworkflowtemplate.yml@main
+    with:
+      templatebasepath: ${{ env:RUNNER_TEMP }}
+    secrets:
+      templatefilename: 'dummydata.dat'

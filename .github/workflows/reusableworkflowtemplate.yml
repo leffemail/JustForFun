@@ -1,0 +1,21 @@
+name: WorkflowTemplate
+
+on:
+  workflow_call:
+    inputs:
+      templatebasepath:
+        required: true
+        type: string
+      templatefilename
+        required: true
+        type: string
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run a one-line script
+      run: .\Scripts\CreateDummyFile.ps1 -BasePath ${{ inputs.templatebasepath }} -DummyFileName ${{ inputs.templatefilename }}
+      shell: powershell
