@@ -12,5 +12,4 @@ jobs:
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
       templatebasepath: 'd:\Temp'
-    secrets:
       templatefilename: 'dummydata.dat'
