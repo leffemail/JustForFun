@@ -6,7 +6,7 @@ on:
       templatebasepath:
         required: true
         type: string
-      templatefilename
+      templatefilename:
         required: true
         type: string
   
