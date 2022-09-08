@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: justforfun/.github/workflows/reusableworkflowtemplate.yml@main
+    uses: ./reusableworkflowtemplate.yml@main
     with:
       templatebasepath: ${{ env:RUNNER_TEMP }}
     secrets:
