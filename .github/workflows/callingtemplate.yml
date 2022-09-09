@@ -7,9 +7,6 @@ on:
     branches:
       - main
 
-env:
-  input: ${{ runner.Temp }}
-
 
 jobs:
   setup1:
@@ -29,6 +26,6 @@ jobs:
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
       #templatebasepath: ${{ needs.setup1.steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
-      templatebasepath: ${{ env.input}}
-      #templatebasepath:  'D:\a\_temp'
+      #templatebasepath: ${{ env.input}}
+      templatebasepath:  'D:\a\_temp'
       templatefilename: 'dummydata.dat'
