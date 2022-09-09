@@ -19,7 +19,7 @@ jobs:
       run: echo '::set-output name=RUNNER_TEMP_BASE::$Runner.Temp'
       id: my-temp-folder
     - name: Test
-      run: echo ${{ $runner.Temp }}
+      run: echo ${{ runner.Temp }}
 
 
   call-workflow-passing-data:
