@@ -28,7 +28,7 @@ jobs:
 
 
   call-workflow-passing-data:
-    uses: ./.github/workflows/reusable-workflow.yml
+    uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
       templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
       templatefilename: 'dummydata.dat'
