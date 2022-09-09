@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: Set temp folder parameter
       run: echo '::set-output name=RUNNER_TEMP_BASE::${{ runner.Temp }}'
-      id: my-temp-folder
+      id: mytempfolder
     - name: Test
       run: echo ${{ runner.Temp }}
 
@@ -25,7 +25,6 @@ jobs:
     needs: setup1
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
-      #templatebasepath: ${{ needs.setup1.steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
-      #templatebasepath: ${{ env.input}}
-      templatebasepath:  'D:\a\_temp'
+      templatebasepath: ${{ needs.setup1.steps.mytempfolder.outputs.RUNNER_TEMP_BASE }}
+      #templatebasepath:  'D:\a\_temp'
       templatefilename: 'dummydata.dat'
