@@ -15,20 +15,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    #- uses: actions/checkout@v3    
     - name: Set temp folder parameter
-      run: echo '::set-output name=RUNNER_TEMP_BASE::$Runner.Temp'
+      run: echo '::set-output name=RUNNER_TEMP_BASE::${{Runner.Temp}}'
       id: my-temp-folder
-    #- name: call-workflow-passing-data
-    #  #uses: ./.github/workflows/reusableworkflowtemplate.yml
-    #  uses: leffemail/JustForFun/.github/workflows/reusable-workflow.yml@main
-    #  with:
-    #    templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
-    #    templatefilename: 'dummydata.dat'
 
 
   call-workflow-passing-data:
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
-      templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
+      #templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
+      templatebasepath: ${{ d:\Temp }}
       templatefilename: 'dummydata.dat'
