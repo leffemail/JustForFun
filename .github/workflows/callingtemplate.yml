@@ -10,12 +10,14 @@ on:
 
 
 jobs:
-  env:
-  # Setting temp folder
-    RUNNER_TEMP_FOLDER: $RUNNER_TEMP
+  runs-on: windows-latest
+
     steps:
+    - name: Set temp folder parameter
+      run: echo '::set-output name=RUNNER_TEMP_BASE::green'
+      id: my-temp-folder
     - name: call-workflow-passing-data
       uses: ./.github/workflows/reusableworkflowtemplate.yml
       with:
-        templatebasepath: ${{ env.RUNNER_TEMP_FOLDER }}
+        templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
         templatefilename: 'dummydata.dat'
