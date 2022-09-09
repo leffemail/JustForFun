@@ -16,8 +16,10 @@ jobs:
 
     steps:
     - name: Set temp folder parameter
-      run: echo '::set-output name=RUNNER_TEMP_BASE::${{Runner.Temp}}'
+      run: echo '::set-output name=RUNNER_TEMP_BASE::$Runner.Temp'
       id: my-temp-folder
+    - name: Test
+      run: echo ${{ $runner.Temp }}
 
 
   call-workflow-passing-data:
