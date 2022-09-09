@@ -15,9 +15,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3    
+    #- uses: actions/checkout@v3    
     - name: Set temp folder parameter
-      run: echo '::set-output name=RUNNER_TEMP_BASE::green'
+      run: echo '::set-output name=RUNNER_TEMP_BASE::$Runner.Temp'
       id: my-temp-folder
     - name: call-workflow-passing-data
       uses: ./.github/workflows/reusableworkflowtemplate.yml
