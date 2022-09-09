@@ -24,6 +24,6 @@ jobs:
     needs: setup1
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
-      templatebasepath: ${{ setup1.steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
+      templatebasepath: ${{ needs.setup1.steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
       #templatebasepath:  'd:\Temp'
       templatefilename: 'dummydata.dat'
