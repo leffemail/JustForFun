@@ -7,12 +7,14 @@ on:
     branches:
       - main
 
-env:
-  # Setting temp folder
-  RUNNER_TEMP_FOLDER: $RUNNER_TEMP
+
 
 jobs:
-  call-workflow-passing-data:
+  env:
+  # Setting temp folder
+    RUNNER_TEMP_FOLDER: $RUNNER_TEMP
+  steps:
+  #call-workflow-passing-data:
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
       templatebasepath: ${{ env.RUNNER_TEMP_FOLDER }}
