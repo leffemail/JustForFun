@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  build_using_template:
+  setup1:
 
     runs-on: windows-latest
 
@@ -21,8 +21,9 @@ jobs:
 
 
   call-workflow-passing-data:
+    needs: setup1
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
-      #templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
-      templatebasepath:  'd:\Temp'
+      templatebasepath: ${{ setup1.steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
+      #templatebasepath:  'd:\Temp'
       templatefilename: 'dummydata.dat'
