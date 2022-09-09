@@ -8,7 +8,7 @@ on:
       - main
 
 env:
-  input: ${{runner.Temp}}
+  input: ${{ runner.Temp }}
 
 
 jobs:
