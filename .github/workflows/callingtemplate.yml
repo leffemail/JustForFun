@@ -28,7 +28,7 @@ jobs:
 
 
   call-workflow-passing-data:
-    uses: leffemail/JustForFun/.github/workflows/reusable-workflow.yml@main
+    uses: ./.github/workflows/reusable-workflow.yml
     with:
       templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
       templatefilename: 'dummydata.dat'
