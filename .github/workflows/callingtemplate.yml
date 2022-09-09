@@ -12,7 +12,8 @@ jobs:
   setup1:
 
     runs-on: windows-latest
-
+    outputs:
+      output1: ${{ steps.mytempfolder.outputs.RUNNER_TEMP_BASE }}
     steps:
     - name: Set temp folder parameter
       run: echo '::set-output name=RUNNER_TEMP_BASE::${{ runner.Temp }}'
@@ -25,6 +26,6 @@ jobs:
     needs: setup1
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
-      templatebasepath: ${{ needs.setup1.steps.mytempfolder.outputs.RUNNER_TEMP_BASE }}
+      templatebasepath: ${{ needs.setup1.outputs.output1 }}
       #templatebasepath:  'D:\a\_temp'
       templatefilename: 'dummydata.dat'
