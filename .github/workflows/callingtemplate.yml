@@ -19,9 +19,16 @@ jobs:
     - name: Set temp folder parameter
       run: echo '::set-output name=RUNNER_TEMP_BASE::$Runner.Temp'
       id: my-temp-folder
-    - name: call-workflow-passing-data
-      #uses: ./.github/workflows/reusableworkflowtemplate.yml
-      uses: leffemail/JustForFun/.github/workflows/reusable-workflow.yml@main
-      with:
-        templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
-        templatefilename: 'dummydata.dat'
+    #- name: call-workflow-passing-data
+    #  #uses: ./.github/workflows/reusableworkflowtemplate.yml
+    #  uses: leffemail/JustForFun/.github/workflows/reusable-workflow.yml@main
+    #  with:
+    #    templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
+    #    templatefilename: 'dummydata.dat'
+
+
+  call-workflow-passing-data:
+    uses: leffemail/JustForFun/.github/workflows/reusable-workflow.yml@main
+    with:
+      templatebasepath: ${{ steps.my-temp-folder.outputs.RUNNER_TEMP_BASE }}
+      templatefilename: 'dummydata.dat'
