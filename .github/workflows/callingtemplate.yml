@@ -14,8 +14,8 @@ jobs:
   # Setting temp folder
     RUNNER_TEMP_FOLDER: $RUNNER_TEMP
     steps:
-    - uses: ./.github/workflows/reusableworkflowtemplate.yml
     - name: call-workflow-passing-data
+    - uses: ./.github/workflows/reusableworkflowtemplate.yml
       with:
-      templatebasepath: ${{ env.RUNNER_TEMP_FOLDER }}
-      templatefilename: 'dummydata.dat'
+        templatebasepath: ${{ env.RUNNER_TEMP_FOLDER }}
+        templatefilename: 'dummydata.dat'
