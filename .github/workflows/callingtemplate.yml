@@ -15,7 +15,7 @@ jobs:
     RUNNER_TEMP_FOLDER: $RUNNER_TEMP
     steps:
     - uses: ./.github/workflows/reusableworkflowtemplate.yml
-    - name: call-workflow-passing-data:
+    - name: call-workflow-passing-data
       with:
       templatebasepath: ${{ env.RUNNER_TEMP_FOLDER }}
       templatefilename: 'dummydata.dat'
