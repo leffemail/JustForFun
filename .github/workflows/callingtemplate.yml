@@ -9,7 +9,7 @@ on:
 
 env:
   # Setting temp folder
-  RUNNER_TEMP_FOLDER: ${{env.RUNNER_TEMP }}
+  RUNNER_TEMP_FOLDER: $RUNNER_TEMP
 
 jobs:
   call-workflow-passing-data:
