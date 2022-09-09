@@ -7,9 +7,13 @@ on:
     branches:
       - main
 
+env:
+  # Setting temp folder
+  RUNNER_TEMP_FOLDER: ${{env.RUNNER_TEMP }}
+
 jobs:
   call-workflow-passing-data:
     uses: ./.github/workflows/reusableworkflowtemplate.yml
     with:
-      templatebasepath: 'd:\Temp'
+      templatebasepath: ${{ env.RUNNER_TEMP_FOLDER }}
       templatefilename: 'dummydata.dat'
